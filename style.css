@@ -1,0 +1,763 @@
+/*
+Theme Name: Child of Divi
+Description: Child theme for Bakerbox
+Author: Paul Knight
+Version: 0.0.1
+Template: Divi
+*/
+
+@import url('../Divi/style.css');
+
+/***** SITE RESETS *****/
+.main_title {display: none;}
+
+h1, h2, h3, p, a {
+font-family: 'RationalTWDisplay-Book', monospace;
+color:#030408;}
+h1  {font-size: 4.3em}
+h2  {font-size: 2.986em}
+h3  {font-size: 2.074em;}
+p   {font-size: 18px;}
+
+@media only screen
+and (max-width: 736px){
+h1  {font-size: 3.583em}
+h2  {font-size: 2.488em}
+h3  {font-size: 1.728em;}
+p   {font-size: 16px;}
+
+}
+
+/*main-header*/
+#main-header {box-shadow: none; background: transparent;} /*set header to transparent for ScrollMagic*/
+@media only screen and (min-width: 981px) {
+#main-header.et-fixed-header {
+box-shadow: none !important;}
+}
+
+/*---------THIS IS VERY IMPORTANT AND CORRECTS AND THEN SETS THE PADDING FOR THE SECTIONS*/
+/*.page-id-36 .et_pb_section {padding-top: 8vh; padding-bottom: 8vh;}
+
+@media only screen and (max-width : 980px){
+.page-id-36 .et_pb_section {padding-top: 5vh; padding-bottom: 5vh;}
+}*/
+
+/****** THIS GETS RID OF THE WEIRD EXTRA MARGIN THAT IS ADDED TO COLUMNS ON MOBILE DEVICES
+if you have two columns on a single row you need to add this back in to the CSS for the column, and
+change 0px back to 30px ******/
+@media (max-width: 980px){
+.et_pb_column {
+margin-bottom: 0px;}
+}
+
+/**** END OF CORE RESETS ****/
+
+#topbar {position: relative; margin-top: -3px; width: 100%; height: 3vh; background-color: #030408; z-index: 999999; overflow: hidden;}
+
+
+/*styles link words on the site*/
+.bb_sitelink1 {font-family: 'RationalTWDisplay-SemiBoldItalic', monospace; border-bottom: 1px solid #11270B; padding-bottom: 3px; cursor: pointer;}
+.bb_sitelink2 {font-family: 'RationalTWDisplay-SemiBoldItalic', monospace; border-bottom: 1px solid #ffffff; padding-bottom: 3px; cursor: pointer;}
+
+
+/****** LINEBOXES ******/
+
+.baker_linebox {
+background-color: #FCF8F1;
+height: 100vh;
+display: inline-block;
+width:  12.5%;
+border-right: 1px solid rgba(245, 212, 209, .9);
+box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+z-index: -1;
+}
+
+#linebox1 {position: fixed; left: 0%}
+#linebox2 {position: fixed; left: 12.5%}
+#linebox3 {position: fixed; left: 25%}
+#linebox4 {position: fixed; left: 37.5%}
+#linebox5 {position: fixed; left: 50%}
+#linebox6 {position: fixed; left: 62.5%}
+#linebox7 {position: fixed; left: 75%}
+#linebox8 {position: fixed; left: 87.5%;}
+
+
+/*homepage section 1*/
+/*#section1_row1 {max-width: 3000px !important;} */
+/** this is set to this value because the default width is
+80% for the row, therefore this value keeps the text of the child element (#maintext) pinned to the left**/
+
+.page-id-36 .entry-content {margin-top: -80px;} /*removes whitespace on desktop. Set separate values for mobile*/
+
+.page-id-36 #bb-backtohome {display: none;}
+
+/*------------------------- MENU ******/
+.mobile_nav.closed .mobile_menu_bar:before {color: #ffffff; background-color: #C44900;padding: 10px; box-shadow: 0 14px 24px 0 rgba(0,0,0,0.17);
+}
+/*x symbol on mobile menu*/
+.mobile_nav.opened .mobile_menu_bar:before {
+content: "\4d";
+background-color: #C44900;
+color: #ffffff;
+padding: 10px;
+box-shadow: 0 14px 24px 0 rgba(0,0,0,0.17);
+}
+
+/*this is the book now button*/
+.bb-menubox {
+float: right;
+right: 12.5%;
+position: relative;
+background-color: #C44900;
+padding: 10px 20px;
+bottom: 9px;
+font-size: 15px;
+box-shadow: 0 14px 24px 0 rgba(0,0,0,0.17);
+overflow: visible;
+cursor: pointer;
+z-index: 99999;
+}
+
+.bb-menubox a {color: #ffffff;font-family: 'RationalTWDisplay-SemiBold', monospace;}
+.bb-menubox span {display: inline-block;}
+
+#menu-item-318 {visibility: hidden; position: relative; left: 113px;}
+#menu-item-309 {visibility: hidden; position: relative; left: 222px;}
+#menu-item-307 {visibility: hidden; position: relative; left: 338px;}
+#menu-item-308 {visibility: hidden; position: relative; left: 442px;}
+
+
+.et_menu_container {
+position: relative;
+top: 44px;
+width: 77%; /*THIS STOPS THE MENU APPEARING TO SLIDE ON WINDOW RE-SIZE*/}
+
+.et_menu_container li a {font-size: 15px;font-weight: initial; color: #2E1C2B !important;}
+
+/*the following has been changed in header.php so it contains the phone number*/
+.logo_container  {font-family: 'RationalTWDisplay-SemiBold', monospace; font-size: 15px; color: #2E1C2B}
+.logo_container span {display: inline-block; position: relative; top: 20px;}
+
+/*removes 'Book Now' from core menu on desktop - this is replaced with a red button appended with jQuery*/
+@media only screen
+and (min-width : 981px) {
+#top-menu #menu-item-550 {display: none;}
+}
+
+/*moves menu items left on desktop only*/
+nav#top-menu-nav, #top-menu, nav.fullwidth-menu-nav, .fullwidth-menu{
+right: 81px;
+position: relative;
+}
+
+@media only screen
+and (max-width : 980px) {
+.bb-menubox {display: none;}
+.logo_container span {display: inline-block; position: relative; top: 28px;}
+}
+
+#mobile_menu {
+position: absolute;
+top: 87px;
+width: 97.2%;
+left: 1vw;
+border-top: 4px solid #C44900;
+box-shadow: 0 14px 24px 0 rgba(0,0,0,0.17);
+}
+#mobile_menu #menu-item-318, #mobile_menu #menu-item-309, #mobile_menu #menu-item-307, #mobile_menu #menu-item-308 {position: relative; left: 0px;}
+#mobile_menu a {font-family: 'RationalTWDisplay-SemiBold', monospace;}
+
+/*------------------------- FIRST SECTION******/
+
+.page-id-36 .et_pb_section_0 {
+background-color: transparent;
+padding-top: 50px;
+clear: both;
+}
+
+.page-id-36 .et_pb_section_0 .et_pb_row_0 {
+position: relative;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+background-image: url("images/twoPeopleBlur1-opt.jpg");
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+width: 75%;
+position: relative;
+left: 12.5%;
+height: 70vh;
+padding-right: 4px;  /*prevents overflow on edge of screnn - why? I don't know*/
+}
+
+@media only screen
+and (max-width: 980px){
+.page-id-36 .et_pb_section_0 .et_pb_row_0 {margin-top: 44px;}
+}
+
+.et_pb_column.et_pb_column_1_2.et_pb_column_1 {
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+        height: 70vh;
+}
+
+.page-id-36 .et_pb_section_0 .et_pb_code_0 {
+box-sizing: border-box;
+background-color: rgba(50, 14, 59, .9);
+position: relative;
+padding: 57.25px 9% 71.25px 9%;
+width: 100%;
+right: 6.25vw;
+box-shadow: 0 14px 24px 0 rgba(0,0,0,0.17);
+}
+
+.bb_logo_holder {
+width: 356px;
+height: 79px;
+background-image: url("http://localhost:8888/BakerBox/wp-content/uploads/2017/02/bakerbox8-white.svg");
+background-repeat: no-repeat;
+background-position: center center;
+background-size: contain;
+margin-bottom: 10px;
+}
+@media only screen
+and (max-width: 1249px){.bb_logo_holder {margin-bottom: 0px}}
+
+@media only screen
+and (min-width: 737px)
+and (max-width: 1249px){
+.bb_logo_holder {width: 296px; height: 90px;}
+}
+
+@media only screen
+and (max-width: 736px){
+.page-id-36 .et_pb_section_0 .et_pb_code_0 {right: 12.25vw}
+.bb_logo_holder {width: 246.66px; height: 73px;}
+}
+
+@media only screen
+and (min-width: 320px)
+and (max-width: 467px){
+.page-id-36 .et_pb_section_0 .et_pb_code_0 {
+min-width: 125%; /*older browsers*/
+min-width: 82.75vw;
+position: relative; right: 18.75vw;}
+}
+
+@media only screen
+and (min-width: 468px)
+and (max-width: 1080px){
+.page-id-36 .et_pb_section_0 .et_pb_code_0 {min-width: 115%;}
+}
+/*
+@media only screen
+and (min-width: 320px)
+and (max-width: 490px){
+.page-id-36 .et_pb_section_0 .et_pb_code_0 {
+}
+}*/
+
+.page-id-36 .et_pb_section_0 .et_pb_code_0 p {color: #ffffff;}
+
+/****** FIRST TEXT SECTION (SECTION 2)******/
+
+.page-id-36 .et_pb_section_1{background-color: transparent;}
+.page-id-36  .et_pb_row_1 {
+overflow: hidden;
+position: relative;
+background-color: #480D23 ;
+box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+padding: 6.25% ;
+width: 62.5%;
+right: 18.75%;
+margin-top: 6vh;
+box-shadow: 0 14px 24px 0 rgba(0,0,0,0.17);
+}
+
+@media only screen
+and (max-width : 980px) {
+.page-id-36 .et_pb_section_1 .et_pb_row_1 {padding: 71.25px 6.25% 71.25px 6.25%;}
+}
+
+.page-id-36 .et_pb_section_1 .et_pb_row_1 p {color: #ffffff;}
+.page-id-36 .et_pb_section_1 .et_pb_row_1 h2 {color: #ffffff; font-family: 'didonesquemedium', arial; letter-spacing: 1px; padding-bottom: 20px;}
+
+
+.slidetext.slidetext2 {
+position: absolute;
+top: 0;
+left: 115%;
+width: 100%;
+}
+
+.more, .less {cursor: pointer;
+font-size: 18px; font-family: 'RationalTWDisplay-SemiBoldItalic', monospace; color: #ffffff;
+border-bottom: 1px solid #ffffff;
+padding-bottom: 3px;
+cursor: pointer;
+}
+
+.less {visibility: hidden;}
+
+.less {position: absolute; left: -3px;}
+
+#bb-arrow-forward{
+display: inline-block;
+-webkit-transform-origin: center center;
+        transform-origin: center center;
+-webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+position: relative;
+left: 5px;
+}
+
+/****** VERTICAL TEXT 1 ******/
+
+#verticaltext1 {
+float: right;
+position: relative;
+right: 12.65%;
+-webkit-transform-origin: center right;
+        transform-origin: center right;
+-webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+top: -8.5vh;
+font-size: 18px;
+overflow: hidden;
+}
+
+#verticaltext1 p {font-family: 'RationalTWDisplay-book', monospace; color: #11270B;}
+
+@media only screen
+and (max-width: 736px){
+.page-id-36 .et_pb_section_1 .et_pb_row_1 {width: 75%; right: 12.5%}
+}
+
+/****** SIGN UP ROW ******/
+
+.page-id-36 .et_pb_section_2 {
+background-color: transparent;
+/*z-index: 5;*/
+}
+
+#signup {margin-bottom: -38px;} /*corrects the space created by bb_form being hidden*/
+
+
+p#bb_form {
+visibility: hidden; /*done this as well as opacity to stop bug*/
+opacity: 0;
+display: inline-block;
+position: relative;
+bottom: 23px;
+left: 0px;
+}
+
+p#bb_form  input[type="email"]  {
+border: none;
+background-color: transparent;
+border-bottom: 1px solid #666;
+padding-bottom: 2px;
+padding-left: 7px;
+box-sizing: border-box;
+position: relative;
+left: 2px;
+bottom: 9px;
+font-family: 'RationalTWDisplay-Book';
+}
+
+p#bb_form  input[type="submit"] {
+width: 100px;
+background:transparent;
+position: relative;
+color: #11270B !important;
+bottom: 7px;
+left: 15px;
+border: 0px;
+padding: 8px 10px;
+font-family: 'RationalTWDisplay-Book';
+font-size: 16.8px;
+cursor: pointer;
+}
+
+/****** FIRST IMAGE ROW *******/
+
+.page-id-36 .et_pb_section_3 {
+background-color: transparent;
+}
+
+.page-id-36 .et_pb_section_3 .et_pb_row_3  {
+background-image: url("images/twoPeopleBlur1-opt.jpg");
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+padding-left: 6.25%;
+box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+width: 62.5%;
+left: 18.75%;
+padding: 18% 6.25%; /*older browsers*/
+padding: 15vh 6.25vw;
+}
+
+/* SQUARE BOX / ARROW CONTAINER*/
+.et_pb_section.et_pb_section_3:before {
+content: '\2193';
+position: absolute;
+top: calc(75% - 25px);
+left: calc(12.5% - 26px);
+width: 50px;
+height: 50px;
+COLOR: rgba(72, 13, 35, 0.33);
+FONT-SIZE: 50px;
+TEXT-ALIGN: center;
+LINE-HEIGHT: 40px;
+}
+
+.page-id-36 .et_pb_section_3 .et_pb_row_3 h2 {color: #ffffff; font-family: 'didonesquemedium', arial; letter-spacing: 1px;}
+.page-id-36 .et_pb_section_3 .et_pb_row_3 p {color: #ffffff;}
+
+.page-id-36 .et_pb_column.et_pb_column_4_4.et_pb_column_4{
+background-color: rgba(72, 13, 35, .9);
+padding: 71.25px 6.25%;
+position: relative;
+left: 6.25vw;
+top: 197px;
+transform: scaleX(0);
+box-shadow: 0 14px 24px 0 rgba(0,0,0,0.17);
+width: 42.5vw;
+}
+
+
+@media only screen
+and (max-width: 736px){
+.page-id-36 .et_pb_section_3 .et_pb_row_3 {width: 75%; left: 12.5%}
+}
+
+/* Portrait for iphone 6+ text issue. Removes the word 'course'*/
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    #remove-course {display: none;}
+}
+/*-------------------- PRICING SECTION *******/
+
+.page-id-36 .et_pb_section_4 {
+margin-top: 180px;
+margin-bottom: 95px;
+overflow-x: hidden;  /*hides extra space created by 2nd text block*/
+}
+
+.page-id-36  .et_pb_section_4.et_pb_section:before {
+content: '';
+position: absolute;
+height: 100%;
+width: 37.5%;
+background-color: #030408;
+top: 0;
+left: 0;
+}
+
+.page-id-36 .et_pb_row_4  {
+position: relative;
+right: 25%;
+background-color: #320E3B ;
+box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+padding: 6.25%;
+width: 50%;
+box-sizing: border-box;
+box-shadow: 0 14px 24px 0 rgba(0,0,0,0.17);
+}
+#pricing-courses-mobile {display: none;} /*turned off for larger screens*/
+
+@media only screen
+and (max-width : 980px) {
+.page-id-36 .et_pb_row_4 {padding: 71.25px 6.25% 71.25px 6.25%;}
+}
+
+.page-id-36 .et_pb_row_4 h2 {color: #ffffff; font-family: 'didonesquemedium', arial; letter-spacing: 1px;}
+.page-id-36 .et_pb_row_4 p, .page-id-36 .et_pb_row_4 a {color: #ffffff;}
+
+#pricingwrapper span {font-family: 'RationalTWDisplay-SemiBold', monospace;}
+.pricing-book-now {font-family: 'RationalTWDisplay-SemiBoldItalic', monospace !important; border-bottom: 1px solid white; padding-bottom: 3px; cursor: pointer;}
+
+#pricing-extra-wrapper{position: absolute;top: 10%; left: 130%; width: 100%;}
+
+@media only screen
+and (max-width : 480px){
+#pricing-courses-mobile {display: inline-block; margin-bottom: 17px;}
+#pricing-extra-wrapper {display: none;}
+.page-id-36 .et_pb_row_4 {
+width: 75%; /*older browsers*/
+width: 75vw;
+position: relative;
+right: 12.5%}
+}
+
+/*-------------------- SECOND IMAGE ROW 2 ******/
+
+.page-id-36 .et_pb_section_5 {
+  background-color: transparent;
+}
+
+.page-id-36 .et_pb_section_5 .et_pb_row_5  {
+background-image: url("images/borough6.jpg");
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+width: 62.5%;
+padding: 15% 6.25%; /*older browswers*/
+padding: 15vh 6.25vw;  /*padding values less here than 1st image slider because of text box*/
+}
+
+@media only screen
+and (max-width : 980px) {
+.page-id-36 .et_pb_section_5 .et_pb_row_5{width: 75%;}
+}
+
+.page-id-36 .et_pb_row_5 h2 {color: #ffffff; font-family: 'didonesquemedium', arial; letter-spacing: 1px; }
+.page-id-36 .et_pb_row_5 p {color: #ffffff;}
+
+/*creates the text box*/
+.page-id-36 .et_pb_column.et_pb_column_4_4.et_pb_column_6{
+background-color: rgba(72, 13, 35, .9);
+padding: 71.25px 6.25%;
+position: relative;
+top: 197px;
+/*right: 12.5vw;*/
+z-index: 4;
+/*for greensock*/
+transform: scaleX(0);
+box-shadow: 0 14px 24px 0 rgba(0,0,0,0.17);
+}
+
+/*this is for both image sliders*/
+.bb_slidetextwrapper1, .bb_slidetextwrapper2 {
+opacity: 0; /* for greensock*/
+}
+
+@media only screen
+and (min-width : 767px){
+.page-id-36 .et_pb_column.et_pb_column_4_4.et_pb_column_6{width: 43.75vw; }
+}
+
+/*really important - this is for the 1st image slider.
+Please take note of other comma separated selectors further down this section which apply to both the 1st and 2nd image slider*/
+ /*{
+position: absolute;
+top: 0;
+padding-top: 71.25px;
+}*/
+
+/*really important -- padding-top must match padding top value of the column for alignment reasons(see further above)
+This css is for both the first and second maroon coloured sliders*/
+.bb_slide_text2, .bb_second_slide_text2 {
+position: absolute;
+top: 0;
+padding-top: 71.25px;
+}
+
+.barwrapper {position: relative; margin-top: 21px;}
+
+.bb_slider_bar, .bb_second_slider_bar {
+height: 3.125vh;
+width: 6.25vw;
+background: white;
+-webkit-transform-origin: center left;
+        transform-origin: center left;
+}
+
+.bb_slider_bar_dot, .bb_second_slider_bar_dot {
+height: 3.125vh;
+width: 3.125vh;
+position: absolute;
+background: red;
+bottom: 0%;
+left: 6.25vw;
+border: 1px solid #ffffff;
+box-sizing: border-box;
+}
+
+/****** FINAL TEXT ******/
+
+.page-id-36 .et_pb_section_6 {
+background: transparent;
+text-align: center;
+padding-bottom: -13px;
+padding-top: 148px;
+}
+
+/****** MY OWN TEXT FOOTER ******/
+.page-id-36 .et_pb_section_7  {position: relative; top: 70px; background-color: #030408;}
+.page-id-36 .et_pb_row_7 {position: relative;top: 11.5px;}
+
+.page-id-36 .et_pb_section_7 .et_pb_code_3  svg#bb-letters {
+padding-bottom: 9px; height: 48px;
+bottom: 12px;
+position: relative;}
+
+.page-id-36 .et_pb_section_7 .et_pb_code_4  p {color: #ffffff; text-align: center; position: relative;top: 14px;}
+.page-id-36 .et_pb_section_7 .et_pb_code_5  p {color: #ffffff; text-align: center;position: relative;top: 14px;}
+
+.page-id-36 .et_pb_section_7
+.bb-social-wrapper {text-align: center;
+}
+.bb-social{
+display: inline-block;
+width: 25px;
+height: 25px;
+position: relative;
+top: 0px;
+background-repeat: no-repeat;
+background-size: contain;
+text-align: center;
+cursor: pointer;
+}
+
+.bb-social-1 {background-image: url("images/instagram-white.svg");}
+.bb-social-2 {margin-left: 40px; margin-right: 40px; background-image: url("images/facebook-white.svg"); }
+.bb-social-3 {position: relative; top: 4px; background-image: url("images/twitter-white.svg"); }
+
+/*adds margin back in from core reset at top of page*/
+@media (max-width: 980px){
+.page-id-36 .et_pb_section_7 .et_pb_column {
+margin-bottom: 30px;}
+}
+
+/****** ET FOOTER ******/
+#main-footer {
+position: relative;
+top: 70px;
+/*z-index: 5;*/
+background-color: #030408;}
+
+#footer-bottom {
+padding: 25px 0px 12.5px;
+background-color: #030408;
+border-top: 1px solid rgba(255, 255, 255, .5);
+width: 75%;
+margin-left: auto;
+margin-right: auto;
+}
+
+ul.et-social-icons {display: none;}
+
+#footer-info {
+float: none;
+text-align: center;
+font-family: 'RationalTWDisplay-SemiBold', monospace;
+font-size: 18px;
+color: #ffffff;}
+
+
+/********** BOOKING EVENTS CSS **********/
+/*FORMATTING CAUSED BY DIVI.  THESE CHANGES MAKE PAGE FULL WIDTH*/
+.archive.post-type-archive.post-type-archive-tribe_events .container {width: 100%;}
+.container:before {display:none;}
+.archive.post-type-archive.post-type-archive-tribe_events .entry-content {margin-left: auto; margin-right: auto; padding: 0 5px;}
+
+#left-area {width: 100%; padding-right: 0px !important;}
+.et_right_sidebar #sidebar {display: none;}
+
+/**SUMMARY OF EVENTS LIST**/
+body.archive.post-type-archive.post-type-archive-tribe_events h2 {font-size: ;}
+body.archive.post-type-archive.post-type-archive-tribe_events {background-color:#FCF8F1;}
+body.archive.post-type-archive.post-type-archive-tribe_events #main-content {background-color: #FCF8F1;}
+
+body.archive.post-type-archive.post-type-archive-tribe_events .et_menu_container {display: none;}
+body.archive.post-type-archive.post-type-archive-tribe_events .bb-menubox {display: none;}
+
+/*LOGO FOR EVENTS PAGES*/
+#bb-backtohome {
+position: relative;
+top: 49px;
+left: calc(50% - 178px);
+width: 356px;
+height: 79px;
+z-index: 2;
+background-image: url("http://localhost:8888/BakerBox/wp-content/uploads/2017/02/bakerbox8-with-arrow-1.svg");
+background-repeat: no-repeat;
+background-position: center center;
+background-size: cover;
+}
+@media only screen
+and (max-width : 737px){
+#bb-backtohome {
+left: calc(50% - 148px);
+width: 296px;
+height: 63px;}
+}
+
+/*FORM ON SUMMARY PAGE*/
+#tribe-events-bar {display: none;}
+#tribe-bar-form label {font-family: 'RationalTWDisplay-book', monospace;letter-spacing: 0px; color: #030408; font-size: 15px; text-transform: capitalize;}
+#tribe-bar-form input[type=text] {font-family: 'RationalTWDisplay-book', monospace; border-bottom: 1px dashed rgba(3, 4, 8, .125);}
+/*placeholder text - has to be done individually to work cross-browser*/
+#tribe-bar-form input::-webkit-input-placeholder {color: rgba(3, 4, 8, .5);}
+#tribe-bar-form input::-moz-placeholder {color: rgba(3, 4, 8, .5);}
+#tribe-bar-form input:-ms-input-placeholder {color: rgba(3, 4, 8, .5);}
+
+#tribe-bar-form .tribe-bar-submit input[type=submit] {font-size: 15px; text-transform: capitalize; background: #C44900; box-shadow: 0 14px 24px 0 rgba(0,0,0,0.17);}
+#tribe-bar-form #tribe-bar-views, .tribe-bar-views-inner{background: #F2AA7E;}
+@media only screen
+and (min-width : 738px){
+.tribe-bar-submit {position: relative; left: 20%; top: 5px;}
+}
+div#tribe-bar-views {visibility: hidden;}
+
+.tribe-events-page-title {font-size: 2.074em !important; font-weight: initial !important; position: relative;top:17px;}
+.tribe-events-list-separator-month span{font-size: 1em; font-family: 'RationalTWDisplay-book', monospace; background: #FCF8F1; color: #030408;}
+.tribe-events-loop .tribe-events-event-meta {font-size: 15px; font-weight: initial;}
+.tribe-events-list-separator-month:after {border-bottom: 1px solid rgba(245, 212, 209, .9);}
+.tribe-event-date-start {font-family: 'RationalTWDisplay-semibold', monospace; color:#030408; }
+a.tribe-event-url {font-size: 24px;font-family: 'didonesquemedium';}
+.tribe-events-list .tribe-events-venue-details {font-family: 'RationalTWDisplay-book', monospace; color: #030408;}
+.tribe-events-event-cost span{font-family: 'RationalTWDisplay-book', monospace; color: #030408 !important;background-color: #FCF8F1 !important; border: 1px solid #030408!important;}
+.tribe-events-list h2.tribe-events-page-title{font-family: 'didonesquemedium', arial;}
+.tribe-events-list .tribe-events-loop .tribe-events-content a {font-family: 'RationalTWDisplay-semibold', monospace !important; color:#C44900;}
+.events-list #tribe-events-footer {border-top: 1px solid rgba(245, 212, 209, .9);}
+a.tribe-events-ical.tribe-events-button, a.tribe-events-gcal.tribe-events-button {background: #C44900 !important; font-size: 15px !important; text-transform: capitalize!important; letter-spacing: 0px! important;}
+
+.tribe-events-event-meta {background: transparent !important;} /*this is for mobiles*/
+/*span.tribe-bar-toggle-arrow, .tribe-bar-collapse #tribe-bar-collapse-toggle {color: #030408;}*/
+@media only screen
+and (max-width : 980px){
+.tribe-events-loop {padding: 0px 20px; position: relative; top: 20px;}
+.tribe-country-name {display: none !important;}
+}
+
+/*ACTUAL EVENT PAGE*/
+.tribe_events-template-default.single.single-tribe_events {background-color:#FCF8F1;}
+.tribe_events-template-default.single.single-tribe_events #main-content {background-color: #FCF8F1;}
+.tribe_events-template-default.single.single-tribe_events .et_menu_container {display: none;}
+.tribe_events-template-default.single.single-tribe_events .bb-menubox {display: none;}
+
+div#tribe-events-content {margin-top: 40px;}
+.tribe-events-back {display: none;}
+.single-tribe_events .tribe-events-schedule {background: transparent;}
+.tribe-events-schedule span {font-weight: initial !important;}
+.tribe-events-cost {font-family: 'RationalTWDisplay-book', monospace; color: #030408 !important;}
+.tribe-events-button {font-family: 'RationalTWDisplay-book',monospace;}
+.tribe-events-single-section.tribe-events-event-meta.primary.tribe-clearfix {background: transparent; border: 1px solid rgba(245, 212, 209, .9);}
+.tribe-events-meta-group .tribe-events-single-section-title {font-family: 'didonesquemedium', arial; font-weight: initial; font-size: 24px;}
+.single-tribe_events #tribe-events-content .tribe-events-event-meta dl {font-family: 'RationalTWDisplay-book', monospace !important; color:#030408 !important; font-size: 15px !important;}
+.tribe-events-nav-previous a, .tribe-events-nav-next a {color: #C44900 !important; background: transparent !important;}
