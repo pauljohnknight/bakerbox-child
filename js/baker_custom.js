@@ -40,6 +40,7 @@ $('.logo_container span').attr('class', 'shimmieup');
 
 //    VERTICAL TEXT 1
 $('.page-id-36 .et_pb_row_1').after('<div class="vtext" id="verticaltext1"><p>Have fun whilst you learn<span class="bb_sitelink1"></span></p></div>');
+$('.page-id-36 .et_pb_row_3').after('<div class="vtext" id="verticaltext2"><p>Bread Making & Patisserie</p></div>');
 
 
 // INITIAL ANIMATIONS ON LOAD FOR HOMES
@@ -49,7 +50,7 @@ var boxHeight = function() {
   var tl2 = new TimelineMax();
 
 tl2
-.fromTo('#topbar', 1, {scaleY: '100vh'}, {scaleY: '.75vh', ease: Back.easeOut.config(.2)})
+.fromTo('.page-id-36 #topbar', 1, {scaleY: '100vh'}, {scaleY: '.75vh', ease: Back.easeOut.config(.2)})
 .staggerFrom('.shimmieup', 1, {y:90, ease: Back.easeOut.config(1.7)}, .07, '-=1' )
 
 .to ('#menu-item-318', 1.5, {autoAlpha: 1, x: -113, ease: Power3.easeOut, delay: 0})

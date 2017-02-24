@@ -1,5 +1,19 @@
 <?php
 
+//  ----------------   intial enqueue of childtheme ----------------
+function my_theme_enqueue_styles() {
+  // This is the parent style handle name. Recommended to leave as it is.
+  $parent_style = 'parent-style';
+
+  wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+  wp_enqueue_style( 'child-style',
+    get_stylesheet_directory_uri() . '/style.css',
+    array( $parent_style ),
+    wp_get_theme()->get('')  //must match childtheme version if uses
+  );
+}
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+
 //  ----------------   enqueue custom fonts for childtheme ----------------
 
 wp_enqueue_style ('child-rational-font', get_stylesheet_directory_uri() . '/fonts/rational/childfonts.css');

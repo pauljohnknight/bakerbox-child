@@ -6,7 +6,7 @@ Version: 0.0.1
 Template: Divi
 */
 
-@import url('../Divi/style.css');
+/*@import url('../Divi/style.css');*/
 
 /***** SITE RESETS *****/
 .main_title {display: none;}
@@ -338,7 +338,7 @@ font-size: 18px;
 overflow: hidden;
 }
 
-#verticaltext1 p {font-family: 'RationalTWDisplay-book', monospace; color: #11270B;}
+#verticaltext1 p, #verticaltext2 p{font-family: 'RationalTWDisplay-book', monospace; color: #11270B;}
 
 @media only screen
 and (max-width: 736px){
@@ -398,10 +398,6 @@ background-color: transparent;
 }
 
 .page-id-36 .et_pb_section_3 .et_pb_row_3  {
-background-image: url("images/twoPeopleBlur1-opt.jpg");
-background-position: center center;
-background-repeat: no-repeat;
-background-size: cover;
 padding-left: 6.25%;
 box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -410,20 +406,24 @@ width: 62.5%;
 left: 18.75%;
 padding: 18% 6.25%; /*older browsers*/
 padding: 15vh 6.25vw;
+background-position: 42% 14%;
+}
+
+/*Allow's text box to break out of video background*/
+.page-id-36 .et_pb_section_3 .et_pb_section_video_bg {
+overflow: hidden;
+}
+.page-id-36 .et_pb_section_3 .et_pb_section_video {
+overflow: visible !important;
 }
 
 /* SQUARE BOX / ARROW CONTAINER*/
-.et_pb_section.et_pb_section_3:before {
-content: '\2193';
-position: absolute;
-top: calc(75% - 25px);
-left: calc(12.5% - 26px);
-width: 50px;
-height: 50px;
-COLOR: rgba(72, 13, 35, 0.33);
-FONT-SIZE: 50px;
-TEXT-ALIGN: center;
-LINE-HEIGHT: 40px;
+#verticaltext2 {
+transform: rotate(90deg);
+transform-origin: center left;
+position: relative;
+left: 12.8%;
+bottom: 400px;
 }
 
 .page-id-36 .et_pb_section_3 .et_pb_row_3 h2 {color: #ffffff; font-family: 'didonesquemedium', arial; letter-spacing: 1px;}
@@ -438,6 +438,7 @@ top: 197px;
 transform: scaleX(0);
 box-shadow: 0 14px 24px 0 rgba(0,0,0,0.17);
 width: 42.5vw;
+z-index: 2
 }
 
 
@@ -454,10 +455,16 @@ and (max-width: 736px){
   and (orientation: portrait) {
     #remove-course {display: none;}
 }
+
+@media only screen
+and (max-width: 980px){
+.page-id-36 .et_pb_section_video_bg {
+display: none;}
+}
 /*-------------------- PRICING SECTION *******/
 
 .page-id-36 .et_pb_section_4 {
-margin-top: 180px;
+margin-top: 157px;
 margin-bottom: 95px;
 overflow-x: hidden;  /*hides extra space created by 2nd text block*/
 }
@@ -518,7 +525,7 @@ right: 12.5%}
 
 .page-id-36 .et_pb_section_5 .et_pb_row_5  {
 background-image: url("images/borough6.jpg");
-background-position: center center;
+background-position: 50% 30%;
 background-repeat: no-repeat;
 background-size: cover;
 box-sizing: border-box;
@@ -689,7 +696,7 @@ body.archive.post-type-archive.post-type-archive-tribe_events .bb-menubox {displ
 /*LOGO FOR EVENTS PAGES*/
 #bb-backtohome {
 position: relative;
-top: 49px;
+top: 72px;
 left: calc(50% - 178px);
 width: 356px;
 height: 79px;
@@ -725,7 +732,7 @@ and (min-width : 738px){
 div#tribe-bar-views {visibility: hidden;}
 
 .tribe-events-page-title {font-size: 2.074em !important; font-weight: initial !important; position: relative;top:17px;}
-.tribe-events-list-separator-month span{font-size: 1em; font-family: 'RationalTWDisplay-book', monospace; background: #FCF8F1; color: #030408;}
+.tribe-events-list-separator-month span{font-size: 1em; font-family: 'RationalTWDisplay-book', monospace; background: #c44900; color: white; padding: 7px 12px;}
 .tribe-events-loop .tribe-events-event-meta {font-size: 15px; font-weight: initial;}
 .tribe-events-list-separator-month:after {border-bottom: 1px solid rgba(245, 212, 209, .9);}
 .tribe-event-date-start {font-family: 'RationalTWDisplay-semibold', monospace; color:#030408; }
