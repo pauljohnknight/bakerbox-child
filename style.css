@@ -6,7 +6,6 @@ Version: 0.0.1
 Template: Divi
 */
 
-/*@import url('../Divi/style.css');*/
 
 /***** SITE RESETS *****/
 .main_title {display: none;}
@@ -768,3 +767,7 @@ div#tribe-events-content {margin-top: 40px;}
 .tribe-events-meta-group .tribe-events-single-section-title {font-family: 'didonesquemedium', arial; font-weight: initial; font-size: 24px;}
 .single-tribe_events #tribe-events-content .tribe-events-event-meta dl {font-family: 'RationalTWDisplay-book', monospace !important; color:#030408 !important; font-size: 15px !important;}
 .tribe-events-nav-previous a, .tribe-events-nav-next a {color: #C44900 !important; background: transparent !important;}
+
+
+  -webkit-transition: background-color .75s;
+transition: background-color .75s;
