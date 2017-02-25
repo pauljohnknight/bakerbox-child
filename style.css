@@ -10,7 +10,7 @@ Template: Divi
 /***** SITE RESETS *****/
 .main_title {display: none;}
 
-h1, h2, h3, h4, p, a {
+h1, h2, h3, h4, h5, p, a {
 font-family: 'RationalTWDisplay-Book', monospace;
 color:#030408;}
 h1  {font-size: 4.3em}
