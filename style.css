@@ -730,7 +730,10 @@ and (min-width : 738px){
 }
 div#tribe-bar-views {visibility: hidden;}
 
-.tribe-events-page-title {font-size: 2.074em !important; font-weight: initial !important; position: relative;top:17px;}
+.tribe-events-page-title {    font-size: 3.3em !important;
+  font-weight: initial !important;
+  position: relative;
+  top: 4px;}
 .tribe-events-list-separator-month span{font-size: 1em; font-family: 'RationalTWDisplay-book', monospace; background: #c44900; color: white; padding: 7px 12px;}
 .tribe-events-loop .tribe-events-event-meta {font-size: 15px; font-weight: initial;}
 .tribe-events-list-separator-month:after {border-bottom: 1px solid rgba(245, 212, 209, .9);}
